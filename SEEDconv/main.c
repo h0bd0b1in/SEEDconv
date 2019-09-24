@@ -1,3 +1,14 @@
+//
+//  main.c
+//  SEEDconv
+//
+//  Created by Stuart Honour on 2019/09/24.
+//
+//  This tool is based off of work by d0k3 (https://github.com/d0k3/)
+//  I claim none of it as my own, I have simply ported the executable to
+//  macOS.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,8 +22,8 @@ void showhelp_exit() {
     exit(0);
 }
 
-int main( int argc, char** argv )
-{
+int main(int argc, const char * argv[]) {
+    
     FILE* fp;
     unsigned char* buffer;
     unsigned char* seeddb;
@@ -20,6 +31,7 @@ int main( int argc, char** argv )
     int n_seeds = 0;
     
     printf("\nSEEDconv by d0k3\n");
+    printf("Ported to macOS by h0bd0b1in\n");
     printf("----------------\n");
     
     if(argc < 2) showhelp_exit();
@@ -109,7 +121,7 @@ int main( int argc, char** argv )
         printf("%i SEEDs found!\n\n", n_seeds);
     } else {
         printf("No SEEDs found!\n\n");
-    }    
+    }
     
     free(buffer);
     free(seeddb);
